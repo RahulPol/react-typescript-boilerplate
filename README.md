@@ -57,11 +57,13 @@ Stage 1: React + Typescript
         Step 11.5: Check the output by opening index.html file
             You'll get an error: Uncaught TypeError: Failed to resolve module specifier "react". Relative references must start with either "/", "./", or "../".
         ----------------------------------------------------------Commit to git -------------------------------------------------------
-        
-        
+        Step 11.6: Hacks 
+            The reason behind the failure is, the typescript compiler just converted your .ts files into .js files and did not pull dependencies(react & react-dom) and pushed them into ./dist/ directory. 
+                To avoid this we will add react & react-dom dependencies into our index.html and remove the reference from ./dist/index.js & ./dist/Hello.js
+            Even after this your code won't work as your browser doesn't understand how to resovle Hello module dependency. You can read more about module resolution at https://www.typescriptlang.org/docs/handbook/module-resolution.html
+                To avoid this make an absolute reference to Hello module in ./dist/index.js file.
+            Now your code works. 
 
-
-
-    
-
+            This is end of React + Typescript stage.
+        ----------------------------------------------------------Commit to git -------------------------------------------------------
     
