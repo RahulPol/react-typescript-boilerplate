@@ -66,4 +66,40 @@ Stage 1: React + Typescript
 
             This is end of React + Typescript stage.
         ----------------------------------------------------------Commit to git -------------------------------------------------------
+Stage 2: React + Typescript + Webpack    
+    There are few problems with pervious stage, 
+        1. You need to always modify ./dist/*.js files after you run typescript compiler. 
+        2. Another problem is that we have to include external dependencies in ./index.html, again this is a pain as our project might have hundreds of dependencies. 
+    We need something that will look up in our ./dist/*.js files and automatically add the dependencies and perform module resolution.And that is the whole reason of webpack, in addition to above things it also provide lots of benifits as we will see.
     
+    Step 12: Install webpack dev dependency
+        npm install --save-dev webpack webpack-cli
+
+        Note: Again this is a dev dependency and not a project one.
+    Step 13: Create a webpack configuration file in root directory. Check what we are doing in this file.
+        ./webpack.config.js
+    Step 14: Install loaders
+        npm i -D ts-loader source-map-loader
+
+        Note: The ts-loader is glue between typescript and webpack. It enables webpack to compile typescript files.
+    Step 15: Create a script in your package json
+        {
+            "webpack": "webpack"
+        }            
+    Step 16: Before we run above command 
+        1. delete your dist folder, 
+        2. remove the react & react-dom dependency from index.html
+        3. refer ./dist/main.js script file instead of index.js in ./index.html And run command
+        
+        npm run webpack
+    
+    Now your code works.        
+    Isn't this a magic. We haven't specified webpack which is our staring file neither we specified where to store the output. The code still works because webpack have some defaults, it stores its output in ./dist/ folder & spit out main.js as final output file.
+    
+    In addition to some default magic webpack has,
+    1. Included your dependencies in final output.
+    2. Resolved module imports.
+    3. Minified your final js
+    4. Included source-map for debugging.
+    And much more...
+    ----------------------------------------------------------Commit to git -------------------------------------------------------

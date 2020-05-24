@@ -5,7 +5,7 @@ import { Hello } from "./components/Hello";
 
 ReactDOM.render(
     <div>
-        <Hello compiler="TypeScript" framework="React" />
+        <Hello compiler="TypeScript+Webpack" framework="React" />
     </div>
     , document.getElementById("example")
 );
