@@ -41,7 +41,24 @@ Stage 1: React + Typescript
     Step 8: Add typescript configuration file
         Add a tsconfig.json file into your root diretory. This will tell typescript compiler, how the output should look like. Checkout the config file for more details.
     Step 9: add some sample .ts files and check the compiler works as expectd
-    ----------------------------------------------------------Commit to git -----------------------------------------------------------
+    ----------------------------------------------------------Commit to git -------------------------------------------------------
+    Step 10: Remove the sample .ts files 
+    Step 11: Writes some code
+        Step 11.1: Add main/root component in the src folder. This is the only react component that should reside outside of component directory.
+            ./src/index.tsx
+        Step 11.2: Add a demo component in component directory. In future, it is adivced that all your sub component reside in this directory. Of course you will have subdirectories to logically group your components but you do not add react component outside of this directory.
+            ./src/component/Hello.tsx (demo component)
+        Step 11.3: Add html file in root directory. In this file, 
+            Add target where your main component will attach itself. 
+            Add reference to your root compoenent js file.(index.js)
+            ./index.html        
+        Step 11.4: Compile your code 
+            tsc
+        Step 11.5: Check the output by opening index.html file
+            You'll get an error: Uncaught TypeError: Failed to resolve module specifier "react". Relative references must start with either "/", "./", or "../".
+        ----------------------------------------------------------Commit to git -------------------------------------------------------
+        
+        
 
 
 

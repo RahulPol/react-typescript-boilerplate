@@ -1,12 +1,6 @@
-"use strict";
-function add(a, b) {
-    return a + b;
-}
-function AddHandler(a, b, cb) {
-    const result = add(a, b);
-    cb(result);
-}
-AddHandler(12, 13, (result) => {
-    console.log(result);
-});
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import { Hello } from "./components/Hello";
+ReactDOM.render(React.createElement("div", null,
+    React.createElement(Hello, { compiler: "TypeScript", framework: "React" })), document.getElementById("example"));
 //# sourceMappingURL=index.js.map
