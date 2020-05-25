@@ -1,13 +1,7 @@
-const path = require("path");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.tsx",
-
-  output: {
-    filename: "main.js" /** The output file of your compilation */,
-    path: path.resolve(__dirname, "dist") /** Location of output file */,
-  },
 
   // The HtmlWebpackPlugin simplifies creation of HTML files, that include a hash in the filename which changes every compilation.
   plugins: [
@@ -15,9 +9,6 @@ module.exports = {
       template: "index.html",
     }),
   ],
-
-  // This will tell webpack to run in production mode so your files will be minfied.
-  mode: "development",
 
   // These options change how modules are resolved.
   resolve: {
